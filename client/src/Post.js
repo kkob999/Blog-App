@@ -1,24 +1,22 @@
-export default function Post() {
+import {format} from "date-fns"
+export default function Post({title,summary,cover, content,createdAt,author}) {
     return (
       <div className="post">
         <div className="image">
           <img
-            src="https://iandloveandyou.com/cdn/shop/articles/puppy-header1.jpg?v=1709219607&width=1500"
+            src={'http://localhost:4000/'+cover}
             alt=""
           />
         </div>
   
         <div className="texts">
-          <h2>Puppy Feeding Guidelines</h2>
+          <h2>{title}</h2>
           <p className="info">
-            <a className="author">Jr J</a>
-            <time>2024-07-25 16:45</time>
+            <a className="author">{author.username}</a>
+            <time>{format(new Date(createdAt), 'MMM d , yyyy HH:mm')}</time>
           </p>
           <p className="summary">
-            That seemingly simple question: “What should I feed my puppy?” – is
-            one that virtually every dog owner must ask themselves (or others) at
-            one time or another. Assuming you might be asking the same question,
-            then congrats – you’re in good company!
+            {summary}
           </p>
         </div>
       </div>
