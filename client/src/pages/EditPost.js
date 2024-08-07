@@ -12,6 +12,7 @@ export default function EditPost() {
 
   useEffect(() => {
     fetch("http://localhost:4000/post/" + id).then((response) => {
+        console.log('lll')
       response.json().then((postInfo) => {
         setTitle(postInfo.title);
         setContent(postInfo.content);
