@@ -9,6 +9,8 @@ import RegistorPage from "./pages/RegistorPage";
 import { UserContext, UserContextProvider } from "./UserContext";
 import CreatePost from "./pages/CreatePost";
 import PostPage from "./pages/PostPage";
+import EditPost from "./pages/EditPost";
+import { Edit } from "@mui/icons-material";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route path={"/register"} element={<RegistorPage />} />
           <Route path={"/create"} element={<CreatePost />} />
           <Route path="/post/:id" element={<PostPage/>}/>
+          <Route path="/edit/:id" element={<EditPost/>}/>
         </Route>
       </Routes>
     </UserContextProvider>
